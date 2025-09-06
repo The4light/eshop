@@ -1,19 +1,30 @@
+/* =======================
+   Navbar Container
+======================= */
 .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 16px 32px;
   background-color: #ffffff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   position: relative;
+  z-index: 1000;
 }
 
+/* =======================
+   Logo
+======================= */
 .navbar-logo {
   font-size: 24px;
   font-weight: bold;
   color: #222;
+  text-decoration: none;
 }
 
+/* =======================
+   Links
+======================= */
 .navbar-links {
   display: flex;
   gap: 32px;
@@ -21,68 +32,64 @@
   font-size: 16px;
   font-weight: 500;
   color: #666;
+  margin: 0;
+  padding: 0;
 }
 
 .navbar-links li {
   cursor: pointer;
-  transition: color 0.2s;
+  transition: color 0.2s ease-in-out;
 }
 
 .navbar-links li:hover {
-  color: #111;
+  color: #2563eb; /* blue accent on hover */
+  border-bottom: 1px solid black;
 }
 
+.navbar-links li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =======================
+   Actions (Search, Cart)
+======================= */
 .navbar-actions {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
+/* Search input */
 .navbar-search {
-  border: 1px solid black;
+  border: 1px solid black; /* soft gray */
   border-radius: 6px;
   padding: 6px 12px;
   font-size: 14px;
+  outline: none;
+  transition: border 0.2s;
 }
 
+.navbar-search:focus {
+  border-color: #2563eb; /* blue focus */
+}
+
+/* Cart Icon */
 .navbar-cart {
-  font-size: 22px;
+  position: relative;
+  font-size: 20px;
   cursor: pointer;
   transition: transform 0.2s;
+  text-decoration: none;
+  color: #1e293b;
 }
 
 .navbar-cart:hover {
   transform: scale(1.1);
+  color: #2563eb;
 }
 
-/* Mobile menu */
-.menu-toggle {
-  display: none;
-  font-size: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.mobile-menu {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-  background: #fff;
-  padding: 16px;
-  position: absolute;
-  top: 64px;
-  left: 0;
-  width: 100%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-.navbar-cart {
-  position: relative;
-  text-decoration: none;
-  font-size: 20px;
-}
-
+/* Cart Count Badge */
 .cart-count {
   position: absolute;
   top: -6px;
@@ -99,18 +106,49 @@
   justify-content: center;
 }
 
+/* =======================
+   Mobile Menu Toggle
+======================= */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
 
+/* =======================
+   Mobile Menu
+======================= */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  padding: 16px;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+/* =======================
+   Responsive
+======================= */
 @media (max-width: 768px) {
-  .navbar-links {
-    display: none;
-  }
+  .navbar-links,
   .navbar-search {
     display: none;
   }
+
   .menu-toggle {
     display: block;
-  }
-  .mobile-menu.open {
-    display: flex;
   }
 }
