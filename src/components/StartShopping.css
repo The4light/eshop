@@ -1,0 +1,23 @@
+.start-shopping {
+  padding: 60px 80px;
+  background: #f9f9f9;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+@media (max-width: 900px) {
+  .product-grid { grid-template-columns: 1fr; }
+}
+

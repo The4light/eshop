@@ -1,0 +1,21 @@
+.products-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: green;
+}
+
+.products-title {
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  padding-left: 0.5rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
