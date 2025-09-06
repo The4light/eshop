@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext"; // 👈 import
 import "./Navbar.css";
+import Logo from "../assets/logo.svg";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,7 +24,9 @@ export default function Navbar() {
     <nav className="navbar">
       {/* Logo */}
       <div className="navbar-logo">
-        <Link to="/">E-Shop</Link>
+          <Link to="/">
+    <img src={Logo} alt="WebLink Logo" style={{ height: "50px", objectFit: "contain" }} />
+  </Link>
       </div>
 
       {/* Links */}
